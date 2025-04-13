@@ -1,10 +1,3 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
-}
 @font-face
 {
     font-family: solarSpaceText; 
@@ -15,4 +8,76 @@ header
 {
     font-family: solarSpaceText;
     color: #692580;
+}
+
+@font-face
+{
+    font-family: solarSpaceText; 
+    src: url('./assets/solarSpaceText.ttf') format('truetype');
+}
+
+body
+{
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-color: #c994ff;
+    border-right-color: #c994ff;
+    border-bottom-color: #c994ff;   
+    border-width: 20px;
+    background-color: #f0e4f7;
+}
+
+header
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+}
+
+.titlearea
+{
+    text-align: center;
+    background-color: #c994ff;
+    overflow: hidden;
+}
+
+.buttonsection
+{
+    float: right;
+}
+
+.centeranimation
+{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+h2
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+}
+
+main
+{
+    text-align: center;
+}
+
+#dropdown select
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+    background-color: #c994ff;
+    padding: 10px;
+}
+
+#gobutton button
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+    background-color: #c994ff;
+    padding: 20px;
+    font-size: 30px;
+    margin: 20px;
 }
