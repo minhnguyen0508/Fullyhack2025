@@ -1,6 +1,20 @@
 import './index.css';
 import planetGif from './assets/planetFullyHacks.gif';
+import obama from './assets/obama.jpg';
+import aquariusImg from './assets/aquarius.jpg';
+import ariesImg from './assets/aries.jpg';
+import cancerImg from './assets/cancer.jpg';
+import capricornImg from './assets/capricorn.jpg';
+import geminiImg from './assets/gemini.jpg';
+import leoImg from './assets/leo.jpg';
+import libraImg from './assets/libra.png';
+import piscesImg from './assets/pisces.jpg';
+import sagittariusImg from './assets/sagittarius.jpg';
+import scorpioImg from './assets/scorpio.jpg';
+import taurusImg from './assets/taurus.jpg';
+import virgoImg from './assets/virgo.jpg';
 
+//import zodiacImg from './assets/imageName.file'
 const img = document.createElement('img');
 img.src = planetGif;
 img.classList.add('centeranimation');
@@ -13,7 +27,20 @@ if (container) {
 } else {
     console.error('No #centeranimation found!');
 }
-
+const zodiacImages = {
+    Aries: ariesImg,
+    Taurus: taurusImg,
+    Gemini: geminiImg,
+    Cancer: cancerImg,
+    Leo: leoImg,
+    Virgo: virgoImg,
+    Libra: libraImg,
+    Scorpio: scorpioImg,
+    Sagittarius: sagittariusImg,
+    Capricorn: capricornImg,
+    Aquarius: aquariusImg,
+    Pisces: piscesImg,
+  };
 document.getElementById('centeranimation').appendChild(img);
 console.log('👋 This message is being logged by "renderer.js", included via webpack'); 
 
@@ -59,7 +86,6 @@ window.updatedays = function()
         let zodiac = "Invalid Birthday";
         if (range >= 321 && range <= 419) {
             zodiac = "Aries";
-            description = ""
           } else if (range >= 420 && range <= 520) {
             zodiac = "Taurus";
           } else if (range >= 521 && range <= 620) {
@@ -91,63 +117,74 @@ window.updatedays = function()
     function getDescription(zodiac){
         let description = " ";
         if (zodiac == "Aries") {
-            description = "You are a sheep ";
+            description = "In Greek mythology, the ram carried Athamas's son Phrixux and daughter Helle to Colchis to escape Ino. When the ram reached Colchis, Phrixux sacrificed the ram and hung its fleece in the Grove or Ares. This fleece turned to gold and later was the quest of Jason and the Argonauts.";
           } else if (zodiac == "Taurus") {
-            description = "You are a bull ";
+            description = "Babylonian constellation. \n Jupiter turns into bull to carry off Europa - daughter of King of Crete.\nIt is also said that Zeus brought the ram to try and win the heart of Europa.";
           } else if (zodiac == "Gemini") {
-            description = "You have an evil twin ";
+            description = "The two bright stars - Castor and Pollux - are also the brothers' names. They were the brothers of Helen of Troy.";
           } else if (zodiac == "Cancer") {
-            description = "You are a crab ";
+            description = "Juno sent a crab to defeat Hercules while fighting Hydra. The crab was crushed by Hercules.";
           } else if (zodiac == "Leo") {
-            description = "You are a narcicist ";
+            description = "In Greek mythology, Leo represents the Nemean Lion which was killed by Hercules.";
           } else if (zodiac == "Virgo") {
-            description = "You are a masochist ";
+            description = "Goddess of farms and harvest. Virgo could also represent Ishtar, Isis, Demeter, Cybele, and Athena.";
           } else if (zodiac == "Libra") {
-            description = "You are judgemental af ";
+            description = "Romans chopped claws from Scorpio during Autumn Equinox to make Libra.";
           } else if (zodiac == "Scorpio") {
-            description = "Two faced soab ";
+            description = "Sent by Gaia to kill Orion when he said he would kill all animals.";
           } else if (zodiac == "Sagittarius") {
-            description = "nah u good";
+            description = "A Chiron, half-man half-horse, sent to kill the scorpion (Scorpio).";
           } else if (zodiac == "Capricorn") {
-            description = "You are a goat, not the GOAT ";
+            description = "The word \"cornucopia\" comes from the broken horn of Capricorn - or the \"horn of plenty.\"";
           } else if (zodiac == "Aquarius") {
-            description = "Cry baby ";
+            description = "In Greek mythology, Aquarius (also known as Ganymede in Roman myth) was a beautiful young boy whom Zeus brought to Olympus to be the cup bearer of the Gods. It is suggested that Zeus fell in love with Aquarius. ";
           } else if (zodiac == "Pisces") {
-            description = "you are the evil twin ";
+            description = "Venus and her son Cupid escaped Typhon as two fish tied together. In Greek mythology, they are Aphrodite and Eros.";
           }
           return description;
     }
 
     document.getElementById('goButton').addEventListener('click', () => {
-        const monthSelect = document.getElementById('month');
-        const daySelect = document.getElementById('day');
-    
-        const month = parseInt(monthSelect.value);
-        const day = parseInt(daySelect.value);
+        const month = parseInt(document.getElementById('month').value);
+        const day = parseInt(document.getElementById('day').value);
     
         const zodiac = getZodiac(month, day);
-        const zodiac_message = getDescription(zodiac);
-
-        const container = document.getElementById('centeranimation');
-        container.innerHTML = ''; // Clear previous output
+        const description = getDescription(zodiac);
+        const imageSrc = zodiacImages[zodiac];
     
+        const container = document.getElementById('centeranimation');
+        container.innerHTML = ''; // Clear previous result
+    
+        // Add zodiac image
+        if (imageSrc) {
+            const image = document.createElement('img');
+            image.src = imageSrc;
+            image.alt = zodiac;
+            image.width = 500;
+            image.height = 500;
+            image.style.display = 'block';
+            image.style.margin = '0 auto';
+            container.appendChild(image);
+        }
+    
+        // Add zodiac message
         const message = document.createElement('p');
         message.textContent = `Your Zodiac sign is: ${zodiac}`;
+        message.style.fontFamily = 'solarSpaceText';
         message.style.fontSize = '24px';
         message.style.fontWeight = 'bold';
         message.style.textAlign = 'center';
         message.style.marginTop = '20px';
-    
         container.appendChild(message);
-
-        const description = document.createElement('p');
-        description.textContent = zodiac_message;
-        description.style.fontSize = '30px';
-        description.style.fontStyle = 'italic';
-        description.style.textAlign = 'center';
-        description.style.marginTop = '10px';
-        description.style.padding = '0 20px';
-        
-        container.appendChild(description);
+    
+        // Add zodiac description
+        const desc = document.createElement('p');
+        desc.textContent = description;
+        desc.style.fontSize = '30px';
+        desc.style.fontStyle = 'italic';
+        desc.style.textAlign = 'center';
+        desc.style.marginTop = '10px';
+        desc.style.padding = '0 20px';
+        container.appendChild(desc);
       });
 }
