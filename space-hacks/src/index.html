@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Your Constellation
+        </title>
+
+        <meta charset = "utf-8">
+        <link href = "index.css" rel = "stylesheet">
+
+    </head>
+
+    <body>
+        <div class = "titlearea">
+            <header>
+                <h1>Your Constellation</h1>
+            </header>
+        </div>
+        <div class = "buttonsection">
+            <button id = "minButton">-</button>
+            <button id = "maxButton">+</button>
+            <button id = "closeButton">x</button>
+        </div>  
+
+        <div id = "centeranimation">
+          
+        </div>
+        
+    <main>
+        <h2>Select Your Birthday</h2>
+        <label for = "month"></label>
+        <select id = "month" onchange = "updatedays()">
+            <option value = "">SELECT MONTH</option>
+            <option value = "1">January</option>
+            <option value = "2">Febuary</option>
+            <option value = "3">March</option>
+            <option value = "4">April</option>
+            <option value = "5">May</option>
+            <option value = "6">June</option>
+            <option value = "7">July</option>
+            <option value = "8">August</option>
+            <option value = "9">September</option>
+            <option value = "10">October</option>
+            <option value = "11">November</option>
+            <option value = "12">December</option>
+        </select>
+
+        <label for = "day"></label>
+        <select id = "day">
+            <option value = "">SELECT DAY</option>
+        </select>
+    </main>
+
+    <footer>Copyright &copy; 2025 Brianna Zaffina & Minh Nguyen<br></footer>
+    </body>
+</html>

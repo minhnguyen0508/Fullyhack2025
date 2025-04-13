@@ -1,0 +1,18 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+}
+@font-face
+{
+    font-family: solarSpaceText; 
+    src: url('./assets/solarSpaceText.ttf') format('truetype');
+}
+
+header
+{
+    font-family: solarSpaceText;
+    color: #692580;
+}
