@@ -14,7 +14,7 @@
         <div class = "titlearea">
             <header>
                 <div class = "buttonsection">
-                    <button id = "minButton">-</button>
+                    <button id = "minButton">_</button>
                     <button id = "maxButton">+</button>
                     <button id = "closeButton">x</button>
                 </div>  
@@ -22,12 +22,13 @@
             </header>
         </div>
 
-        <div id = "centeranimation">
-            <img  src = "planetFullyHacks.gif" class = "logo" alt = "Planet" width = "100px" height = "100" >
+        <div>
+            <img  src = "planetFullyHacks.gif" class = "centeranimation" alt = "Planet" width = "500px" height = "500px" >
         </div>
         
     <main>
         <h2>Select Your Birthday</h2>
+    <div id = "dropdown">
         <label for = "month"></label>
         <select id = "month" onchange = "updatedays()">
             <option value = "">SELECT MONTH</option>
@@ -49,6 +50,10 @@
         <select id = "day">
             <option value = "">SELECT DAY</option>
         </select>
+    </div>
+    <div id = "gobutton">
+        <button id = "goButton">GO!!!!</button>
+    </div>  
     </main>
 
     <footer>Copyright &copy; 2025 Brianna Zaffina & Minh Nguyen<br></footer>
