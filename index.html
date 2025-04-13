@@ -2,7 +2,7 @@
 <html lang = "en">
     <head>
         <title>
-            FullyHack's Official Project
+            Your Constellation
         </title>
 
         <meta charset = "utf-8">
@@ -11,6 +11,36 @@
     </head>
 
     <body>
+        <div class = "Title Area">
+            <header>
+                <h1>Your Constellation</h1>
+            </header>
+        </div>
+        <div class = "ButtonSection">
+            <button id = "minButton">-</button>
+            <button id = "maxButton">+</button>
+            <button id = "closeButton">x</button>
+        </div>  
+
+        <div id = "centerAnimation">
+            <img  src = "planetFullyHacks.png" class = "logo" alt = "Planet" width = "100px" height = "100" >
+        </div>
         
+        <h2>Select Your Birthday</h2>
+        <label for = "month">MONTH</label>
+        <select id = "month" onchange = "updatedays()">
+            <option value = "1">January</option>
+            <option value = "2">Febuary</option>
+            <option value = "3">March</option>
+            <option value = "4">April</option>
+            <option value = "5">May</option>
+            <option value = "6">June</option>
+            <option value = "7">July</option>
+            <option value = "8">August</option>
+            <option value = "9">September</option>
+            <option value = "10">October</option>
+            <option value = "11">November</option>
+            <option value = "12">December</option>
+        </select>
     </body>
 </html>
