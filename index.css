@@ -1,0 +1,11 @@
+@font-face
+{
+    font-family: solarSpaceText; 
+    src: url('solarSpaceText.ttf');
+}
+
+header
+{
+    font-family: solarSpaceText;
+    color: #692580;
+}
