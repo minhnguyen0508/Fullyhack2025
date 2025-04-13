@@ -8,6 +8,7 @@
 
  ## Installation
  npm install
+ 
  npm install --save-dev @electron-forge/plugin-fuses
 
  Then use
