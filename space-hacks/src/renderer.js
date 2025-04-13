@@ -1,5 +1,5 @@
 import './index.css';
-import planetGif from './assets/planetFullyHacks.gif';
+import planetGif from './assets/saturnFullyHacks.png';
 
 const img = document.createElement('img');
 img.src = planetGif;
