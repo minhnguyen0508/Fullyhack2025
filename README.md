@@ -4,6 +4,7 @@
 
  ## Members
  Tran Nguyen 
+ 
  Brianna Zaffina
 
  ## Installation
@@ -12,7 +13,9 @@
  npm install --save-dev @electron-forge/plugin-fuses
 
  Then use
+ 
  npm start
+ 
  to start the code
 
  ## Description
