@@ -1,3 +1,4 @@
+
 @font-face
 {
     font-family: solarSpaceText; 
@@ -13,6 +14,7 @@ body
     border-right-color: #c994ff;
     border-bottom-color: #c994ff;   
     border-width: 20px;
+    background-color: #f0e4f7;
 }
 
 header
@@ -31,4 +33,40 @@ header
 .buttonsection
 {
     float: right;
+}
+
+.centeranimation
+{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+h2
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+}
+
+main
+{
+    text-align: center;
+}
+
+#dropdown select
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+    background-color: #c994ff;
+    padding: 10px;
+}
+
+#gobutton button
+{
+    font-family: solarSpaceText;
+    color: #5500ab;
+    background-color: #c994ff;
+    padding: 20px;
+    font-size: 30px;
+    margin: 20px;
 }
