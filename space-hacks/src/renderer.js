@@ -24,7 +24,7 @@ window.updatedays = function()
     const monthSelect = document.getElementById("month");
     const month = parseInt(monthSelect.value);
 
-    daySlect.innerHTML = '<option value = ""> SELECT DAY</option>';
+    daySelect.innerHTML = '<option value = "">SELECT DAY</option>';
 
     const daysInMonth = 
     {
@@ -47,7 +47,7 @@ window.updatedays = function()
         const days = daysInMonth[month];
         for (let i = 1; i <= days; i++)
         {   
-            const option = documnet.createElement("option");
+            const option = document.createElement("option");
             option.value = i;
             option.text = i;
             daySelect.appendChild(option);
