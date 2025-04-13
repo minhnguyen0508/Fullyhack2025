@@ -1,87 +1,100 @@
-@font-face
-{
-    font-family: solarSpaceText; 
-    src: url('./assets/solarSpaceText.ttf') format('truetype');
-}
+    @font-face
+    {
+        font-family: solarSpaceText; 
+        src: url('./assets/solarSpaceText.ttf') format('truetype');
+    }
 
-body
-{
-    border-left-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-color: #c994ff;
-    border-right-color: #c994ff;
-    border-bottom-color: #c994ff;   
-    border-width: 20px;
-    background-color: #f0e4f7;
-}
+    body
+    {
+        border-left-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-color: #c994ff;
+        border-right-color: #c994ff;
+        border-bottom-color: #c994ff;   
+        border-width: 20px;
+        background-color: #f0e4f7;
+        background-image: url('./assets/spaceBG.png');
+    }
 
-header
-{
-    font-family: solarSpaceText;
-    color: #5500ab;
-    overflow: hidden;
-}
+    header
+    {
+        font-family: solarSpaceText;
+        color: #5500ab;
+        overflow: hidden;
+    }
 
-.titlearea
-{
-    text-align: center;
-    background-color: #c994ff;
-    overflow: hidden;
-}
+    .titlearea
+    {
+        text-align: center;
+        background-color: #c994ff;
+        overflow: hidden;
+    }
 
-.buttonsection
-{
-    float: right;
-}
+    .buttonsection
+    {
+        float: right;
+    }
 
-.centeranimation
-{
-    display: block;
-    margin: auto;
-    width: 50%;
-}
+    .centeranimation
+    {
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
 
-h2
-{
-    font-family: solarSpaceText;
-    color: #5500ab;
-}
+    h2
+    {
+        font-family: solarSpaceText;
+        color: #c994ff;
+    }
 
-main
-{
-    text-align: center;
-}
+    main
+    {
+        text-align: center;
+    }
 
-#dropdown select
-{
-    font-family: solarSpaceText;
-    color: #5500ab;
-    background-color: #c994ff;
-    padding: 15px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #5500ab;
-}
+    #dropdown select
+    {
+        font-family: solarSpaceText;
+        color: #5500ab;
+        background-color: #c994ff;
+        padding: 15px;
+        border-style: solid;
+        border-width: 3px;
+        border-color: #5500ab;
+    }
 
-#gobutton button
-{
-    font-family: solarSpaceText;
-    color: #5500ab;
-    background-color: #c994ff;
-    padding: 20px;
-    font-size: 30px;
-    margin: 20px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #5500ab;
-}
+    #gobutton button
+    {
+        font-family: solarSpaceText;
+        color: #5500ab;
+        background-color: #c994ff;
+        padding: 20px;
+        font-size: 30px;
+        margin: 20px;
+        border-style: solid;
+        border-width: 3px;
+        border-color: #5500ab;
+    }
 
-footer
-{
-    font-family: solarSpaceText;
-    text-align: center;
-    color: #5500ab;
-    font-size: 0.7em;
-    font-style: italic;
-}
+    footer
+    {
+        font-family: solarSpaceText;
+        text-align: center;
+        color: #c994ff;
+        font-size: 0.7em;
+        font-style: italic;
+    }
+
+    #results
+    {
+        text-align: center;
+    }
+
+    #results p
+    {
+        font-family: solarSpaceText;
+        color: #c994ff;
+        font-size: 1em;
+    }
