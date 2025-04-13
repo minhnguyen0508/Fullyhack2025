@@ -4,8 +4,31 @@
     src: url('solarSpaceText.ttf');
 }
 
+body
+{
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-color: #c994ff;
+    border-right-color: #c994ff;
+    border-bottom-color: #c994ff;   
+    border-width: 20px;
+}
+
 header
 {
     font-family: solarSpaceText;
-    color: #692580;
+    color: #5500ab;
+}
+
+.titlearea
+{
+    text-align: center;
+    background-color: #c994ff;
+    overflow: hidden;
+}
+
+.buttonsection
+{
+    float: right;
 }
