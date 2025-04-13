@@ -17,8 +17,7 @@ import virgoImg from './assets/virgo.jpg';
 const img = document.createElement('img');
 img.src = planetGif;
 img.classList.add('centeranimation');
-img.width = 500;
-img.height = 500;
+img.id = 'planetGif';
 
 const container = document.getElementById('centeranimation');
 if (container) {
@@ -161,17 +160,24 @@ window.updatedays = function()
              const zodiac = getZodiac(month, day);
              const description = getDescription(zodiac);
              const imageSrc = zodiacImages[zodiac];
+             const planetImg = document.getElementById('planetGif');
 
              document.getElementById('zodiac').innerText = `Your Zodiac Sign Is: ${zodiac}`;
              document.getElementById('description').innerText = description;
              const zodiacImg = document.getElementById('zodiacImages');
              zodiacImg.src = imageSrc; 
              zodiacImg.alt = zodiac;
-             image.width = 500;
-             image.height = 500;
-             image.style.display = 'block';
-             image.style.margin = '0 auto';
+             zodiacImg.width = 500;
+             zodiacImg.height = 500;
+             zodiacImg.style.display = 'block';
+             zodiacImg.style.margin = '0 auto';
+             zodiacImg.style.padding = '10px';
 
+            
+             if(planetImg)
+             {
+                planetImg.remove();
+             }
              document.querySelector('h2').innerHTML = '';
              document.getElementById('month').style.display = 'none'; // Hide the month dropdown
              document.getElementById('day').style.display = 'none'; // Hide the day dropdown
