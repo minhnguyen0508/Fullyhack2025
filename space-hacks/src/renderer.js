@@ -14,7 +14,6 @@ import scorpioImg from './assets/scorpio.jpg';
 import taurusImg from './assets/taurus.jpg';
 import virgoImg from './assets/virgo.jpg';
 
-//import zodiacImg from './assets/imageName.file'
 const img = document.createElement('img');
 img.src = planetGif;
 img.classList.add('centeranimation');
@@ -27,20 +26,7 @@ if (container) {
 } else {
     console.error('No #centeranimation found!');
 }
-const zodiacImages = {
-    Aries: ariesImg,
-    Taurus: taurusImg,
-    Gemini: geminiImg,
-    Cancer: cancerImg,
-    Leo: leoImg,
-    Virgo: virgoImg,
-    Libra: libraImg,
-    Scorpio: scorpioImg,
-    Sagittarius: sagittariusImg,
-    Capricorn: capricornImg,
-    Aquarius: aquariusImg,
-    Pisces: piscesImg,
-  };
+
 document.getElementById('centeranimation').appendChild(img);
 console.log('👋 This message is being logged by "renderer.js", included via webpack'); 
 
@@ -86,6 +72,7 @@ window.updatedays = function()
         let zodiac = "Invalid Birthday";
         if (range >= 321 && range <= 419) {
             zodiac = "Aries";
+            description = ""
           } else if (range >= 420 && range <= 520) {
             zodiac = "Taurus";
           } else if (range >= 521 && range <= 620) {
@@ -105,7 +92,7 @@ window.updatedays = function()
           } else if ((range >= 1222 && range <= 1231) || (range >= 101 && range <= 119)) {
             zodiac = "Capricorn";
           } else if (range >= 120 && range <= 218) {
-            zodiac = "Aquarius";
+            zodiac = "Aquarius";    
           } else if (range >= 219 && range <= 320) {
             zodiac = "Pisces";
           }
@@ -144,47 +131,56 @@ window.updatedays = function()
           return description;
     }
 
+    const zodiacImages = {
+        Aries: ariesImg,
+        Taurus: taurusImg,
+        Gemini: geminiImg,
+        Cancer: cancerImg,
+        Leo: leoImg,
+        Virgo: virgoImg,
+        Libra: libraImg,
+        Scorpio: scorpioImg,
+        Sagittarius: sagittariusImg,
+        Capricorn: capricornImg,
+        Aquarius: aquariusImg,
+        Pisces: piscesImg,
+      };
+
     document.getElementById('goButton').addEventListener('click', () => {
-        const month = parseInt(document.getElementById('month').value);
-        const day = parseInt(document.getElementById('day').value);
+        const monthSelect = document.getElementById('month');
+        const daySelect = document.getElementById('day');
+        const month = parseInt(monthSelect.value);
+        const day = parseInt(daySelect.value);
     
         const zodiac = getZodiac(month, day);
-        const description = getDescription(zodiac);
+        const zodiac_message = getDescription(zodiac);
         const imageSrc = zodiacImages[zodiac];
-    
-        const container = document.getElementById('centeranimation');
-        container.innerHTML = ''; // Clear previous result
-    
-        // Add zodiac image
-        if (imageSrc) {
-            const image = document.createElement('img');
-            image.src = imageSrc;
-            image.alt = zodiac;
-            image.width = 500;
-            image.height = 500;
-            image.style.display = 'block';
-            image.style.margin = '0 auto';
-            container.appendChild(image);
-        }
-    
-        // Add zodiac message
-        const message = document.createElement('p');
-        message.textContent = `Your Zodiac sign is: ${zodiac}`;
-        message.style.fontFamily = 'solarSpaceText';
-        message.style.fontSize = '24px';
-        message.style.fontWeight = 'bold';
-        message.style.textAlign = 'center';
-        message.style.marginTop = '20px';
-        container.appendChild(message);
-    
-        // Add zodiac description
-        const desc = document.createElement('p');
-        desc.textContent = description;
-        desc.style.fontSize = '30px';
-        desc.style.fontStyle = 'italic';
-        desc.style.textAlign = 'center';
-        desc.style.marginTop = '10px';
-        desc.style.padding = '0 20px';
-        container.appendChild(desc);
+        
+        if (month && day)
+            {
+             const zodiac = getZodiac(month, day);
+             const description = getDescription(zodiac);
+             const imageSrc = zodiacImages[zodiac];
+
+             document.getElementById('zodiac').innerText = `Your Zodiac Sign Is: ${zodiac}`;
+             document.getElementById('description').innerText = description;
+             const zodiacImg = document.getElementById('zodiacImages');
+             zodiacImg.src = imageSrc; 
+             zodiacImg.alt = zodiac;
+             image.width = 500;
+             image.height = 500;
+             image.style.display = 'block';
+             image.style.margin = '0 auto';
+
+             document.querySelector('h2').innerHTML = '';
+             document.getElementById('month').style.display = 'none'; // Hide the month dropdown
+             document.getElementById('day').style.display = 'none'; // Hide the day dropdown
+             document.getElementById('goButton').style.display = 'none'; // Hide the GO button
+            }
+
+            else 
+            {
+                alert("Please Enter Both a Day and Month Please!!!");
+            }
       });
 }
